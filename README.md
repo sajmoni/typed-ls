@@ -27,7 +27,7 @@ type Command = {
   set: (payload: T) => void
   remove: () => void
 }
-```ts
+```
 
 ### key
 
