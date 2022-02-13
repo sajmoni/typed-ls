@@ -18,7 +18,7 @@ export const language = createCommand('language', 'en')
 ## API 
 
 ```ts
-createCommand<T>(key: string, payload: T): Command
+createCommand<T>(key: string, defaultPayload: T): Command
 ```
   
 ```ts
@@ -28,3 +28,12 @@ type Command = {
   remove: () => void
 }
 ```ts
+
+### key
+
+The local storage key.
+
+### defaultPayload
+
+If there is no value in local storage, `get` will return the `defaultPayload` instead. 
+
