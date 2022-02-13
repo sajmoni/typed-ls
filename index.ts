@@ -1,4 +1,3 @@
-
 export const createCommand = <Payload>(
   command: string,
   defaultValue: Payload,
