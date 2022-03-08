@@ -1,16 +1,16 @@
-export const createCommand = <Payload>(
-  command: string,
+export const createStoredValue = <Payload>(
+  key: string,
   defaultValue: Payload,
 ) => {
   return {
     get: (): Payload => {
-      return get(command) ?? defaultValue
+      return get(key) ?? defaultValue
     },
     set: (payload: Payload) => {
-      set(command, payload)
+      set(key, payload)
     },
     remove: () => {
-      remove(command)
+      remove(key)
     },
   }
 }

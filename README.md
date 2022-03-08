@@ -14,25 +14,33 @@
 
 This is a tiny helper library that creates type-safe `get` and `set` functions for working with local storage.
 
-It has only one export `createCommand`:
+It has only one export `createStoredValue`:
 
 ```ts
-import { createCommand } from 'typed-ls'
+import { createStoredValue } from 'typed-ls'
 
-export const language = createCommand('language', 'en')
+const defaultValue = 'en'
+
+export const language = createStoredValue('language', defaultValue)
 // language.get() => 'en'
 // language.set('jp')
 // language.remove()
 ```
 
+The type will be inferred from the default value. If this is not possible, for example if the default value is `undefined` or `[]`, you can explicitly set the type instead:
+
+```ts
+export const language = createStoredValue<string[]>('languages', [])
+```
+
 ## :newspaper: API
 
 ```ts
-createCommand<T>(key: string, defaultPayload: T): Command
+createStoredValue<T>(key: string, defaultPayload: T): StoredValue
 ```
 
 ```ts
-type Command = {
+type StoredValue = {
   get: () => T
   set: (payload: T) => void
   remove: () => void
