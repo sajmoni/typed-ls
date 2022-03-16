@@ -1,12 +1,18 @@
+export type StoredValue<Payload> = {
+  get: () => Payload
+  set: (payload: Payload) => void
+  remove: () => void
+}
+
 export const createStoredValue = <Payload>(
   key: string,
   defaultValue: Payload,
-) => {
+): StoredValue<Payload> => {
   return {
-    get: (): Payload => {
+    get: () => {
       return get(key) ?? defaultValue
     },
-    set: (payload: Payload) => {
+    set: (payload) => {
       set(key, payload)
     },
     remove: () => {
@@ -21,7 +27,7 @@ const set = <Key extends string, Payload>(key: Key, payload: Payload): void => {
 
 const get = <Key extends string, Value>(key: Key): Value | undefined => {
   const restored = localStorage.getItem(key)
-  return restored ? (JSON.parse(restored) as Value) : undefined
+  return restored === null ? undefined : (JSON.parse(restored) as Value)
 }
 
 const remove = <Key extends string>(key: Key): void => {
