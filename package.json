@@ -24,30 +24,18 @@
     ]
   },
   "prettier": {
-    "trailingComma": "all",
     "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "bracketSpacing": true
-  },
-  "xo": {
-    "prettier": true,
-    "env": [
-      "es2020",
-      "node"
-    ],
-    "rules": {
-      "import/no-extraneous-dependencies": "off",
-      "unicorn/filename-case": "off",
-      "capitalized-comments": "off"
-    }
+    "trailingComma": "all",
+    "singleQuote": true
   },
   "devDependencies": {
     "ava": "4.1.0",
     "esbuild-runner": "2.2.1",
+    "eslint": "8.11.0",
     "np": "7.6.0",
+    "one-eslint": "0.0.4",
     "package-preview": "4.0.0",
-    "typescript": "4.6.2",
-    "xo": "0.47.0"
+    "prettier": "2.5.1",
+    "typescript": "4.6.2"
   }
 }
