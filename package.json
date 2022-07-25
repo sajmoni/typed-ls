@@ -2,8 +2,13 @@
   "name": "typed-ls",
   "license": "MIT",
   "version": "0.1.0",
-  "description": "",
-  "keywords": [],
+  "description": "Type-safe local storage",
+  "keywords": [
+    "local storage",
+    "typed",
+    "typescript",
+    "type-safe"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc",
     "go": "npm run build && preview && ava",

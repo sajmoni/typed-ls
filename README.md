@@ -59,14 +59,6 @@ If there is no value in local storage, `get` will return the `defaultPayload` in
 
 ## :package: Install
 
-**npm**
-
-```
+```sh
 npm install typed-ls
-```
-
-**yarn**
-
-```
-yarn add typed-ls
 ```
