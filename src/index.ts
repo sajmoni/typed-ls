@@ -10,26 +10,17 @@ export const createStoredValue = <Payload>(
 ): StoredValue<Payload> => {
   return {
     get: () => {
-      return get(key) ?? defaultValue
+      const restored: string | null = localStorage.getItem(key)
+
+      return restored === null
+        ? defaultValue
+        : (JSON.parse(restored) as Payload)
     },
     set: (payload) => {
-      set(key, payload)
+      localStorage.setItem(key, JSON.stringify(payload))
     },
     remove: () => {
-      remove(key)
+      localStorage.removeItem(key)
     },
   }
-}
-
-const set = <Key extends string, Payload>(key: Key, payload: Payload): void => {
-  localStorage.setItem(key, JSON.stringify(payload))
-}
-
-const get = <Key extends string, Value>(key: Key): Value | undefined => {
-  const restored = localStorage.getItem(key)
-  return restored === null ? undefined : (JSON.parse(restored) as Value)
-}
-
-const remove = <Key extends string>(key: Key): void => {
-  localStorage.removeItem(key)
 }
