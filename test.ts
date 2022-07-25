@@ -2,9 +2,9 @@ import test from 'ava'
 import { createStoredValue } from 'typed-ls'
 
 const mockLocalStorage = () => {
-  let mockLocalStorageValue: string | undefined
+  let mockLocalStorageValue: string | null = null
 
-  // @ts-expect-error All functions don't need to be mocked
+  // @ts-expect-error All properties don't need to be mocked
   global.localStorage = {
     getItem: () => {
       return mockLocalStorageValue
@@ -13,7 +13,7 @@ const mockLocalStorage = () => {
       mockLocalStorageValue = payload
     },
     removeItem: () => {
-      mockLocalStorageValue = undefined
+      mockLocalStorageValue = null
     },
   }
 }
