@@ -14,7 +14,7 @@
     "go": "npm run build && preview && ava",
     "release": "npm run build && np --no-tests",
     "test": "ava",
-    "qa": "tsc && xo --fix"
+    "qa": "tsc && one"
   },
   "main": "dist/index.js",
   "files": [
