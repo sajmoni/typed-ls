@@ -29,13 +29,14 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "ava": "4.1.0",
+    "ava": "4.3.1",
     "esbuild-runner": "2.2.1",
-    "eslint": "8.11.0",
-    "np": "7.6.0",
+    "eslint": "8.20.0",
+    "np": "7.6.2",
     "one-eslint": "0.0.4",
     "package-preview": "4.0.0",
     "prettier": "2.5.1",
-    "typescript": "4.6.2"
+    "tsconfig-one": "0.0.2",
+    "typescript": "4.7.4"
   }
 }

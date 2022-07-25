@@ -1,15 +1,10 @@
 {
+  "extends": "tsconfig-one/tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "outDir": "dist",
     "declaration": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "incremental": false,
+    "lib": ["esnext", "DOM"]
   },
   "include": ["src"]
 }
