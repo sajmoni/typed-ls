@@ -14,8 +14,6 @@
 
 This is a tiny helper library that creates type-safe `get` and `set` functions for working with local storage.
 
-It has only one export `createStoredValue`:
-
 ```ts
 import { createStoredValue } from 'typed-ls'
 
@@ -27,7 +25,7 @@ export const language = createStoredValue('language', defaultValue)
 // language.remove()
 ```
 
-The type will be inferred from the default value. If this is not possible, for example if the default value is `undefined` or `[]`, you can explicitly set the type instead:
+The type will be inferred from the default value. If this is not possible (for example if the default value is `undefined` or `[]`) you can explicitly set the type instead:
 
 ```ts
 export const language = createStoredValue<string[]>('languages', [])
