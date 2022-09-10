@@ -10,17 +10,39 @@ export const createStoredValue = <Payload>(
 ): StoredValue<Payload> => {
   return {
     get: () => {
-      const restored: string | null = localStorage.getItem(key)
+      try {
+        const restored: string | null = localStorage.getItem(key)
 
-      return restored === null
-        ? defaultValue
-        : (JSON.parse(restored) as Payload)
+        return restored === null
+          ? defaultValue
+          : (JSON.parse(restored) as Payload)
+      } catch (error) {
+        console.error(
+          'Failed to get value from local storage:',
+          (error as Error).message,
+        )
+        return defaultValue
+      }
     },
     set: (payload) => {
-      localStorage.setItem(key, JSON.stringify(payload))
+      try {
+        localStorage.setItem(key, JSON.stringify(payload))
+      } catch (error) {
+        console.error(
+          'Failed to set value to local storage:',
+          (error as Error).message,
+        )
+      }
     },
     remove: () => {
-      localStorage.removeItem(key)
+      try {
+        localStorage.removeItem(key)
+      } catch (error) {
+        console.error(
+          'Failed to remove from local storage:',
+          (error as Error).message,
+        )
+      }
     },
   }
 }
