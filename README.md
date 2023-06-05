@@ -67,7 +67,7 @@ npm install typed-ls
 
 If local storage is not available then:
 
-- Getters will always return default values
-- Setters be no-ops
+- `get` always returns default values
+- `set` and `remove` are no-ops
 
 This can happen if the user has turned off local storage in the privacy setting of their browser
