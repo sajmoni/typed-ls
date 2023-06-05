@@ -16,10 +16,9 @@ export const createStoredValue = <Payload>(
         return restored === null
           ? defaultValue
           : (JSON.parse(restored) as Payload)
-      } catch (error) {
-        console.error(
-          'Failed to get value from local storage:',
-          (error as Error).message,
+      } catch {
+        console.warn(
+          'typed-ls: localStorage not available - default value was used',
         )
         return defaultValue
       }
@@ -27,20 +26,18 @@ export const createStoredValue = <Payload>(
     set: (payload) => {
       try {
         localStorage.setItem(key, JSON.stringify(payload))
-      } catch (error) {
-        console.error(
-          'Failed to set value to local storage:',
-          (error as Error).message,
+      } catch {
+        console.warn(
+          'typed-ls: localStorage not available - no value was saved',
         )
       }
     },
     remove: () => {
       try {
         localStorage.removeItem(key)
-      } catch (error) {
-        console.error(
-          'Failed to remove from local storage:',
-          (error as Error).message,
+      } catch {
+        console.warn(
+          'typed-ls: localStorage not available - no value was removed',
         )
       }
     },

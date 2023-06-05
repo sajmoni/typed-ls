@@ -12,7 +12,7 @@
 
 ## :sparkles: Features
 
-This is a tiny helper library that creates type-safe `get` and `set` functions for working with local storage.
+This is a tiny helper library that creates type-safe `get` and `set` functions for working with local storage
 
 ```ts
 import { createStoredValue } from 'typed-ls'
@@ -47,16 +47,27 @@ type StoredValue = {
 
 ### key
 
-The local storage key.
+The local storage key
 
 ### defaultPayload
 
-If there is no value in local storage, `get` will return the `defaultPayload` instead.
+If there is no value in local storage, `get` will return the `defaultPayload` instead
 
 ---
 
 ## :package: Install
 
-```sh
+```console
 npm install typed-ls
 ```
+
+---
+
+## Local storage not available
+
+If local storage is not available then:
+
+- Getters will always return default values
+- Setters be no-ops
+
+This can happen if the user has turned off local storage in the privacy setting of their browser
