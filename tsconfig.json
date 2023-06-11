@@ -6,5 +6,5 @@
     "incremental": false,
     "lib": ["esnext", "DOM"]
   },
-  "include": ["src", "index.test.ts"]
+  "include": ["src"]
 }
