@@ -14,6 +14,12 @@
 
 This is a tiny helper library that creates type-safe `get` and `set` functions for working with local storage
 
+### Why?
+
+- The key is only defined once
+- Ensures the same type is used when both getting and setting the value
+- Reduces boilerplate
+
 ```ts
 import { createStoredValue } from 'typed-ls'
 
