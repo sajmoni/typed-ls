@@ -1,4 +1,4 @@
-export type StoredValue = ReturnType<typeof createStoredValue>
+export type StoredValue<Payload> = ReturnType<typeof createStoredValue<Payload>>
 
 export const createStoredValue = <Payload>(
   key: string,

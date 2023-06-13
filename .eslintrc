@@ -12,6 +12,7 @@
     "no-console": "off",
     "import/extensions": "off",
     "import/no-unused-modules": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }
