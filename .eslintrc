@@ -11,6 +11,7 @@
     "@typescript-eslint/no-implicit-any-catch": "off",
     "no-console": "off",
     "import/extensions": "off",
-    "import/no-unused-modules": "off"
+    "import/no-unused-modules": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
