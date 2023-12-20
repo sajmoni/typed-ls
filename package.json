@@ -28,10 +28,8 @@
   ],
   "prettier": "prettier-config-one",
   "devDependencies": {
-    "eslint": "8.56.0",
     "happy-dom": "12.10.3",
     "np": "9.2.0",
-    "one-eslint": "0.0.4",
     "prettier": "3.1.1",
     "prettier-config-one": "0.2.0",
     "tsconfig-one": "0.0.8",
